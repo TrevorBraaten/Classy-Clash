@@ -12,6 +12,7 @@ int main()
     InitWindow(windowWidth, windowHeight, "Retro Game");
 
     Texture2D map = LoadTexture("nature_tileset/OpenWorldMap24x24.png");
+
     Vector2 mapPos{0.0, 0.0};
     
     // Movement Speed
@@ -23,8 +24,8 @@ int main()
 
     Texture2D knight = LoadTexture("characters/knight_idle_spritesheet.png");
     Vector2 knightPos{
-        windowWidth/2.0f - 4.0f * (0.5 * (float)knight.width/6.0), 
-        windowHeight/2.0f - (0.5f * knight.height)
+        (float)windowWidth/2.0f - 4.0f * (0.5f * (float)knight.width/6.0f), 
+        windowHeight/2.0f - 4.0f * (0.5f * (float)knight.height)
     };
 
     // Game While Loop
@@ -44,12 +45,25 @@ int main()
         if (Vector2Length(direction) != 0.0)
         {
         // Set mapPos = mapPos - direction
-       
         mapPos = Vector2Subtract(mapPos, Vector2Scale(Vector2Normalize(direction), speed));
         }
 
+        // Draws the map
         DrawTextureEx(map, mapPos, 0.0, 4.0, WHITE);
-    
+
+        // Draws the character
+        Rectangle source{0.f, 0.f, (float)knight.width/6.f, (float)knight.height};
+        Rectangle dest{knightPos.x, knightPos.y, 4.0f * (float)knight.width/6.0f, 4.0f * (float)knight.height};
+        DrawTexturePro(knight, source, dest, Vector2{}, 0.f, WHITE);
+
+
+
+
+
+
+
+
+
 
 
         EndDrawing();
