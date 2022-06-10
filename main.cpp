@@ -20,6 +20,13 @@ int main()
     // Sets the target fps
     SetTargetFPS(60);
     
+
+    Texture2D knight = LoadTexture("characters/knight_idle_spritesheet.png");
+    Vector2 knightPos{
+        windowWidth/2.0f - 4.0f * (0.5 * (float)knight.width/6.0), 
+        windowHeight/2.0f - (0.5f * knight.height)
+    };
+
     // Game While Loop
     while (!WindowShouldClose())
     {
