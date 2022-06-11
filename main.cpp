@@ -34,7 +34,7 @@ int main()
         mapPos = Vector2Scale(knight.GetWorldPos(),  -1.f);
 
         // draw the map
-        DrawTextureEx(map, mapPos, 0.0, 4.0, WHITE);
+        DrawTextureEx(map, mapPos, 0.0, mapScale, WHITE);
         knight.tick(GetFrameTime());
         // Check map bounds
         if (knight.GetWorldPos().x < 0.f ||
@@ -44,6 +44,7 @@ int main()
         {
             knight.undoMovement();
         }
+        
         EndDrawing();
     }
     CloseWindow();
