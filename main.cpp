@@ -20,8 +20,8 @@ int main()
 
     const float mapScale{4.0f};
 
-    Character knight;
-    knight.SetScreenPos(windowWidth, windowHeight);
+    
+    Character knight{windowWidth, windowHeight};
 
 //  Sets Target FPS
     SetTargetFPS(60);
@@ -44,7 +44,7 @@ int main()
         {
             knight.undoMovement();
         }
-        
+
         EndDrawing();
     }
     CloseWindow();
