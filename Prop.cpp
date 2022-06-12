@@ -9,3 +9,8 @@ texture(tex)
     texture = tex;
 
 }
+
+Vector2 Prop::Render(Vector2 np)
+{
+
+}
