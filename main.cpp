@@ -27,6 +27,9 @@ int main()
      LoadTexture("characters/goblin_idle_spritesheet.png"),
      LoadTexture("characters/goblin_run_spritesheet.png")
     };
+    goblin.setTarget(&knight);
+
+
 
 
 
